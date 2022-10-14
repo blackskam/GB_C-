@@ -1,0 +1,15 @@
+C:\GEEKBRAINS\DeepLearning\1_part\C#\hello_world\Example001_Hello_Concole\bin\Debug\net6.0\Example001_Hello_Concole.exe
+C:\GEEKBRAINS\DeepLearning\1_part\C#\hello_world\Example001_Hello_Concole\bin\Debug\net6.0\Example001_Hello_Concole.deps.json
+C:\GEEKBRAINS\DeepLearning\1_part\C#\hello_world\Example001_Hello_Concole\bin\Debug\net6.0\Example001_Hello_Concole.runtimeconfig.json
+C:\GEEKBRAINS\DeepLearning\1_part\C#\hello_world\Example001_Hello_Concole\bin\Debug\net6.0\Example001_Hello_Concole.dll
+C:\GEEKBRAINS\DeepLearning\1_part\C#\hello_world\Example001_Hello_Concole\bin\Debug\net6.0\Example001_Hello_Concole.pdb
+C:\GEEKBRAINS\DeepLearning\1_part\C#\hello_world\Example001_Hello_Concole\obj\Debug\net6.0\Example001_Hello_Concole.csproj.AssemblyReference.cache
+C:\GEEKBRAINS\DeepLearning\1_part\C#\hello_world\Example001_Hello_Concole\obj\Debug\net6.0\Example001_Hello_Concole.GeneratedMSBuildEditorConfig.editorconfig
+C:\GEEKBRAINS\DeepLearning\1_part\C#\hello_world\Example001_Hello_Concole\obj\Debug\net6.0\Example001_Hello_Concole.AssemblyInfoInputs.cache
+C:\GEEKBRAINS\DeepLearning\1_part\C#\hello_world\Example001_Hello_Concole\obj\Debug\net6.0\Example001_Hello_Concole.AssemblyInfo.cs
+C:\GEEKBRAINS\DeepLearning\1_part\C#\hello_world\Example001_Hello_Concole\obj\Debug\net6.0\Example001_Hello_Concole.csproj.CoreCompileInputs.cache
+C:\GEEKBRAINS\DeepLearning\1_part\C#\hello_world\Example001_Hello_Concole\obj\Debug\net6.0\Example001_Hello_Concole.dll
+C:\GEEKBRAINS\DeepLearning\1_part\C#\hello_world\Example001_Hello_Concole\obj\Debug\net6.0\refint\Example001_Hello_Concole.dll
+C:\GEEKBRAINS\DeepLearning\1_part\C#\hello_world\Example001_Hello_Concole\obj\Debug\net6.0\Example001_Hello_Concole.pdb
+C:\GEEKBRAINS\DeepLearning\1_part\C#\hello_world\Example001_Hello_Concole\obj\Debug\net6.0\Example001_Hello_Concole.genruntimeconfig.cache
+C:\GEEKBRAINS\DeepLearning\1_part\C#\hello_world\Example001_Hello_Concole\obj\Debug\net6.0\ref\Example001_Hello_Concole.dll
