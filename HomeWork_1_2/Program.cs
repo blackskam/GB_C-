@@ -9,20 +9,13 @@ Console.WriteLine("Введите второе число:");
 int numB = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите третье число:");
 int numC = Convert.ToInt32(Console.ReadLine());
- 
-if (numA > numB && numA > numC)
+int max = numA;
+if (max < numB)
 {
-    Console.WriteLine("Максимальное число = " + numA);
+    max = numB;
 }
-else if (numB > numA && numB > numC)
+if (max < numC)
 {
-    Console.WriteLine("Максимальное число = " + numB);
+    max = numC;
 }
-else if (numC > numA && numC > numB)
-{
-    Console.WriteLine("Максимальное число = " + numC);
-}
-else
-{
-    Console.WriteLine("Вы ввели одинаковые числа");
-}
+Console.WriteLine("Максимальное число: " + max);

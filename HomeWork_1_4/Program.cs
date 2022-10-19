@@ -5,7 +5,7 @@
 
 Console.WriteLine("Введите натуральное число:");
 int numA = Convert.ToInt32(Console.ReadLine());
-int count = 1;
+int count = 2;
 
 if (numA < 1 )
 {
@@ -15,10 +15,7 @@ else
 {
     while (count <= numA)
     {
-        if ((count % 2) == 0)
-        {
-            Console.Write(count + ", ");
-        }
-        count = count + 1;
+        Console.Write(count + ", ");        
+        count = count + 2;
     }
 }
