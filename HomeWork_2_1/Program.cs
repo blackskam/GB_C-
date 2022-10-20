@@ -14,17 +14,13 @@ int numA = GetIntConsole();
 
 while (true) 
 {
-    if (numA < 99 || numA > 1000)
+    if (numA < 100 || numA > 1000)
     {
         Console.WriteLine("Вы ввели не трехзначное число, повторите ввод или введите цифру 0 для выхода");
         numA = GetIntConsole();
         if (numA == 0)
         {
             break;
-        }
-        else
-        {
-            continue;
         }
     }
     else
