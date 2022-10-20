@@ -31,7 +31,7 @@ while (true)
         {
             numA = numA / 10;
         }
-        int rezult = (numA % 100) % 10;
+        int rezult = numA % 10;
         Console.WriteLine(rezult);
         break;
     }
