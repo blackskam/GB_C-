@@ -42,7 +42,7 @@ while (exitTrue)
             }
         case "setname":
             {
-                if (nameUser = " ")
+                if (nameUser == " ")
                 {
                     nameUser = ReadString("Введите имя: ");
                     passwordUser = ReadString("Введите пароль: ");
