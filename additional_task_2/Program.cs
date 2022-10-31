@@ -42,8 +42,15 @@ while (exitTrue)
             }
         case "setname":
             {
-                nameUser = ReadString("Введите имя: ");
-                passwordUser = ReadString("Введите пароль: ");
+                if (nameUser = " ")
+                {
+                    nameUser = ReadString("Введите имя: ");
+                    passwordUser = ReadString("Введите пароль: ");
+                }
+                else
+                {
+                    Console.WriteLine("Имя и пароль уже установлено!");
+                }
                 break;
             }
         case "changepassword":
