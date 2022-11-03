@@ -10,12 +10,6 @@ Dictionary<string, decimal> balans = new Dictionary<string, decimal>()
     { "CHF", 0},
     { "GBR", 0},
 };
-//decimal balansRub = 0M;
-//decimal balansEur = 0M;
-//decimal balansUsd = 0M;
-//decimal balansJpy = 0M;
-//decimal balansChf = 0M;
-//decimal balansGbr = 0M;
 
 Dictionary<string, decimal> rate = new Dictionary<string, decimal>()
 {
@@ -26,16 +20,7 @@ Dictionary<string, decimal> rate = new Dictionary<string, decimal>()
     { "GBR", 71.43M},
 };
 
-//decimal rateEur = 61.07M;
-//decimal rateUsd = 61.61M;
-//decimal rateJpy = 0.4157M;
-//decimal rateChf = 61.67M;
-//decimal rateGbr = 71.43M;
-
 bool exitTrue = true;
-//string passwordUser = " ";
-//string nameUser = " ";
-
 
 string ReadString(string message)
 {
@@ -56,8 +41,6 @@ void Balans()
     {
         Console.Write(" {0:F2} = {1:F2},", money.Key, money.Value);
     }
-    //Console.Write("RUB = {0:F2} , EUR = {1:F2} , USD = {2:F2} , ", balansRub, balansEur, balansUsd);
-    //Console.WriteLine("JPY = {0:F2} , CHF = {1:F2} , GBR = {2:F2}", balansJpy, balansChf, balansGbr);
 }
 
 void Rate()
@@ -67,8 +50,6 @@ void Rate()
     {
         Console.Write(" 1 {0} = {1:F2},", course.Key, course.Value);
     }
-    //Console.Write("1 EUR = {0:F2} ₽, 1 USD = {1:F2} ₽, ", rateEur, rateUsd);
-    //Console.WriteLine("1 JPY = {0:F4} ₽, 1 CHF = {1:F2} ₽, 1 GBR = {2:F2} ₽", rateJpy, rateChf, rateGbr);
 }
 
 void Setbalans()
@@ -78,7 +59,6 @@ void Setbalans()
     {
         Console.Write("Введите баланс {0}: ", money.Key);
         balans[money.Key] = Convert.ToDecimal(Console.ReadLine());
-        //Console.Write(" {0} = {1:F2},", money.Key, money.Value);
     }
 }
 
@@ -89,7 +69,6 @@ void Setrate()
     {
         Console.Write("Введите курс {0}: ", course.Key);
         rate[course.Key] = Convert.ToDecimal(Console.ReadLine());
-        //Console.Write(" {0} = {1:F2},", money.Key, money.Value);
     }
 }
 
