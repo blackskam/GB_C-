@@ -20,7 +20,7 @@ Dictionary<string, decimal> rate = new Dictionary<string, decimal>()
     { "GBR", 71.43M},
 };
 
-bool exitTrue = true;
+bool isWork = true;
 
 string ReadString(string message)
 {
@@ -40,6 +40,7 @@ void Balans()
     foreach (var money in balans)
     {
         Console.Write(" {0:F2} = {1:F2},", money.Key, money.Value);
+        Console.WriteLine();
     }
 }
 
@@ -84,7 +85,7 @@ void Help()
 }
 
 
-while (exitTrue)
+while (isWork)
 {
     //Balans();
     Console.WriteLine(" для вызова списка команд введите help");
@@ -93,7 +94,7 @@ while (exitTrue)
     {
         case "exit":
         {
-             exitTrue = false;
+             isWork = false;
              break;
         }
         case "help":
@@ -126,9 +127,16 @@ while (exitTrue)
             {
                 string inputСurrency1 = ReadString("Из какой валюты конвертировать?(RUB, EUR, USD, JPY, CHF, GBR):");
                 string inputСurrency2 = ReadString("В какую валюту конвертировать?(RUB, EUR, USD, JPY, CHF, GBR):");
+                inputСurrency1 = inputСurrency1.ToUpper();
+                inputСurrency2 = inputСurrency2.ToUpper();
                 if (inputСurrency1 == inputСurrency2)
                 {
                     Console.WriteLine("Валюты идентичны");
+                    break;
+                }
+                if ((!balans.ContainsKey(inputСurrency1)) && (!balans.ContainsKey(inputСurrency1)))
+                {
+                    Console.WriteLine("Вы ввели недоопустимую валюту!");
                     break;
                 }
                 else
@@ -150,22 +158,22 @@ while (exitTrue)
                         {
                             if (inputСurrency1 == "RUB")
                             {
-                                decimal tempCurency1 = balans[inputСurrency1];
-                                decimal tempCurency2 = balans[inputСurrency2];
-                                decimal rateCurency = rate[inputСurrency2];
-                                balans[inputСurrency2] = (moneyСurrency / rateCurency) + tempCurency2;
-                                balans[inputСurrency1] = tempCurency1 - moneyСurrency;
+                                //decimal tempCurency1 = balans[inputСurrency1];
+                                //decimal tempCurency2 = balans[inputСurrency2];
+                                //decimal rateCurency = rate[inputСurrency2];
+                                balans[inputСurrency2] = (moneyСurrency / rate[inputСurrency2]) + balans[inputСurrency2];
+                                balans[inputСurrency1] = balans[inputСurrency1] - moneyСurrency;
                                 break;
                             }
                             else
                             {
-                                decimal tempCurency1 = balans[inputСurrency1];
-                                decimal tempCurency2 = balans[inputСurrency2];
-                                decimal rateCurency = rate[inputСurrency2];
-                                decimal rateRub = rate[inputСurrency1];
-                                decimal tempRub = moneyСurrency * rateRub;
-                                balans[inputСurrency2] = (tempRub / rateCurency) + tempCurency2;
-                                balans[inputСurrency1] = tempCurency1 - moneyСurrency;
+                                //decimal tempCurency1 = balans[inputСurrency1];
+                                //decimal tempCurency2 = balans[inputСurrency2];
+                                //decimal rateCurency = rate[inputСurrency2];
+                                //decimal rateRub = rate[inputСurrency1];
+                                decimal tempRub = moneyСurrency * rate[inputСurrency1];
+                                balans[inputСurrency2] = (tempRub / rate[inputСurrency2]) + balans[inputСurrency2];
+                                balans[inputСurrency1] = balans[inputСurrency1] - moneyСurrency;
                                 break;
                             }
                         }
