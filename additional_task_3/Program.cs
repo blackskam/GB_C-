@@ -13,6 +13,7 @@ Dictionary<string, decimal> balans = new Dictionary<string, decimal>()
 
 Dictionary<string, decimal> rate = new Dictionary<string, decimal>()
 {
+    { "RUB", 1M},
     { "EUR", 61.07M},
     { "USD", 61.61M},
     { "JPY", 0.4157M},
@@ -55,22 +56,38 @@ void Rate()
 
 void Setbalans()
 {
+    Balans();
     Console.WriteLine("Ваш баланс валют: ");
     foreach (var money in balans)
     {
         Console.Write("Введите баланс {0}: ", money.Key);
-        balans[money.Key] = Convert.ToDecimal(Console.ReadLine());
+        balans[money.Key] += Convert.ToDecimal(Console.ReadLine());
+        if (balans[money.Key] < 0)
+        {
+            balans[money.Key] = 0;
+        }
     }
+    Balans();
 }
 
 void Setrate()
 {
+    Rate();
     Console.WriteLine("");
     foreach (var course in rate)
     {
         Console.Write("Введите курс {0}: ", course.Key);
-        rate[course.Key] = Convert.ToDecimal(Console.ReadLine());
+        decimal rate_temp = Convert.ToDecimal(Console.ReadLine());
+        if (rate_temp <= 0)
+        {
+            Console.WriteLine("Курс не может быть отрицательным или равным 0");
+        }
+        else
+        {
+            rate[course.Key] = rate_temp;
+        }
     }
+    Rate();
 }
 
 void Help()
@@ -119,7 +136,6 @@ while (isWork)
             }
         case "setrate":
             {
-                Rate();
                 Setrate();
                 break;
             }
@@ -129,14 +145,14 @@ while (isWork)
                 string inputСurrency2 = ReadString("В какую валюту конвертировать?(RUB, EUR, USD, JPY, CHF, GBR):");
                 inputСurrency1 = inputСurrency1.ToUpper();
                 inputСurrency2 = inputСurrency2.ToUpper();
+                if ((!balans.ContainsKey(inputСurrency1)) || (!balans.ContainsKey(inputСurrency2)))
+                {
+                    Console.WriteLine("Вы ввели недоопустимую валюту!");
+                    break;
+                }
                 if (inputСurrency1 == inputСurrency2)
                 {
                     Console.WriteLine("Валюты идентичны");
-                    break;
-                }
-                if ((!balans.ContainsKey(inputСurrency1)) && (!balans.ContainsKey(inputСurrency1)))
-                {
-                    Console.WriteLine("Вы ввели недоопустимую валюту!");
                     break;
                 }
                 else
@@ -156,26 +172,9 @@ while (isWork)
                         }
                         else
                         {
-                            if (inputСurrency1 == "RUB")
-                            {
-                                //decimal tempCurency1 = balans[inputСurrency1];
-                                //decimal tempCurency2 = balans[inputСurrency2];
-                                //decimal rateCurency = rate[inputСurrency2];
-                                balans[inputСurrency2] = (moneyСurrency / rate[inputСurrency2]) + balans[inputСurrency2];
-                                balans[inputСurrency1] = balans[inputСurrency1] - moneyСurrency;
-                                break;
-                            }
-                            else
-                            {
-                                //decimal tempCurency1 = balans[inputСurrency1];
-                                //decimal tempCurency2 = balans[inputСurrency2];
-                                //decimal rateCurency = rate[inputСurrency2];
-                                //decimal rateRub = rate[inputСurrency1];
-                                decimal tempRub = moneyСurrency * rate[inputСurrency1];
-                                balans[inputСurrency2] = (tempRub / rate[inputСurrency2]) + balans[inputСurrency2];
-                                balans[inputСurrency1] = balans[inputСurrency1] - moneyСurrency;
-                                break;
-                            }
+                            balans[inputСurrency2] += moneyСurrency * rate[inputСurrency1] / rate[inputСurrency2];
+                            balans[inputСurrency1] -= balans[inputСurrency1];
+                            Balans();
                         }
                     } 
                     break;
