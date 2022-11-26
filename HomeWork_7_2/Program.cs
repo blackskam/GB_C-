@@ -23,7 +23,7 @@ GetElementAray(i, j, array);
 
 void GetElementAray(int i, int j, int[,] array)
 {
-    if (((i - 1) > array.GetLength(0)) || ((j - 1) > array.GetLength(0)))
+    if ((i > array.GetLength(0)) || (j > array.GetLength(1)))
         Console.WriteLine("Такого числа в массиве нет");
     else
         Console.WriteLine(array[(i - 1), (j - 1)]);
