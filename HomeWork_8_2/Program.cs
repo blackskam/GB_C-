@@ -29,7 +29,7 @@ int GetRow(int[,] tarray)
             sumrow += tarray[i,j];
         }
         sumrowarray[i] = sumrow;
-        Console.WriteLine(sumrow);
+        //Console.WriteLine(sumrow);
     }
     int min = 0;
     for (int i = 1; i < sumrowarray.Length; i++)
