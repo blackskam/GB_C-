@@ -9,10 +9,10 @@ M = 4; N = 8. -> 30  */
 
 int numM = 4;
 int numN = 8;
-GetNumberSum(numM, numN, 0);
+GetNumberSum(numM, numN);
 
 
-void GetNumberSum(int numM, int numN, int sum)
+void GetNumberSum(int numM, int numN, int sum = 0)
 {
     if (numM > numN)
     {
