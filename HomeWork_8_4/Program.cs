@@ -10,7 +10,7 @@
 int m = 2;
 int n = 2;
 int l = 2;
-int max = 10;
+int max = 100;
 int[,,] array3d = NewArray(m, n, l, max);
 WriteArray(array3d);
 
